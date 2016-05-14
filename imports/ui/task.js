@@ -11,4 +11,11 @@ Template.task.events({
     'click .delete'() {
         Task.remove(this._id);
     },
+    'click'() {
+        if(Meteor.isServer){
+            console.log("i am server");
+        }else{
+            console.log("i am client");
+        }
+    }
 });
