@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
 import { Tasks } from '../api/tasks.js';
+import { HTTP } from 'meteor/http'
 import './task.html';
 
 Template.task.events({
@@ -9,13 +10,16 @@ Template.task.events({
         });
     },
     'click .delete'() {
-        Task.remove(this._id);
+        Tasks.remove(this._id);
     },
-    'click'() {
+   /* 'click'() {
         if(Meteor.isServer){
             console.log("i am server");
+            HTTP.get(Tasks.find(this._id).url,{params: {},function (error,result){
+                console.log(result);
+            }});
         }else{
             console.log("i am client");
         }
-    }
+    }*/
 });

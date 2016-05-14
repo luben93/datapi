@@ -2,6 +2,7 @@ import { Template } from 'meteor/templating';
 import { Tasks } from '../api/tasks.js';
 import './body.html';
 import './task.js'
+import { HTTP } from 'meteor/http';
 
 Template.body.helpers({
     tasks(){
@@ -15,18 +16,21 @@ Template.body.events({
 
         const target = event.target;
         const text = target.text.value;
-    //     const url = target.url.value;
-const url =text;
+        //     const url = target.url.value;
+        const url =text;
 
-        Meteor.http.call("GET", url, { params: { }},function(err,result){
-        console.log(result);
-      }) ;
-        Tasks.insert({
-            text,createdAt: new Date(),url,
-        });
+       Meteor.http.call("GET", url, { params: { }},function(err,result){
+           if(err){
+               console.log("error")
+           }else{
+           console.log(result);
+           Tasks.insert({
+                text,createdAt: new Date(),url,data: result.content,
+            });
+        }});
 
         target.text.value = '';
- //       target.url.value = '';
+        //       target.url.value = '';
     },
 });
 
