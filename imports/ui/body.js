@@ -1,10 +1,11 @@
 import { Template } from 'meteor/templating';
 import { Tasks } from '../api/tasks.js';
 import './body.html';
+import './task.js'
 
 Template.body.helpers({
     tasks(){
-        return Tasks.find({});
+        return Tasks.find({}, {sory: {createdAt: -1}});
     }
 });
 
@@ -22,3 +23,5 @@ Template.body.events({
         target.text.value = '';
     },
 });
+
+
