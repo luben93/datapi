@@ -1,5 +1,75 @@
 
-h1
+body
 {
-	background: #aaa;
+	font-family: "Dosis";
 }
+
+.title h1
+{
+	font-size: 128px;
+}
+
+.title p
+{
+	font-size: 36px;
+	color: #555;
+}
+
+.category
+{
+	padding: 15px;
+	margin: 5px;
+}
+
+.rounded
+{
+	border-radius: 25px;
+}
+
+.category p
+{
+	color: white;
+	font-size: 24px;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.category a
+{
+	text-decoration: none;
+}
+
+.nav-back
+{
+	padding-bottom: 50px;
+}
+
+.nav-back a
+{
+	font-size: 40px;
+	color: #333;
+	text-decoration: overline;
+}
+
+
+
+.category-header img
+{
+	padding: 15px;
+	height: 170px;
+}
+
+.category-header h1
+{
+	font-size: 48px;
+	text-transform: capitalize;
+}
+
+.category-header p
+{
+	font-size: 28px;
+	color: #555;
+}
+
+.color1{	background-color: #3d566e;}
+.color2{	background-color: #3B725F;}

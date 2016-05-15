@@ -2,6 +2,7 @@ import { Template } from 'meteor/templating';
 import { Tasks } from '../api/tasks.js';
 import './home.html';
 import './category.html';
+import './data.html';
 import './task.js'
 import { HTTP } from 'meteor/http';
 
@@ -11,9 +12,19 @@ Router.route('/', function () {
   this.render('home');
 });
 
-Router.route('/category', function () {
-  this.render('category');
+Router.route('/category/:name', function () {
+	const name = this.params.name;
+	console.log(name);
+  this.render('category', {data: {name: name}});
 });
+
+Router.route('/data/:_id', function () {
+	const name = this.params._id;
+	console.log(name);
+  this.render('data', {data: {_id: name}});
+});
+
+
 
 Template.body.helpers({
     tasks(){
