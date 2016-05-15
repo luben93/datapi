@@ -3,6 +3,7 @@ import { Tasks } from '../api/tasks.js';
 import './home.html';
 import './category.html';
 import './data.html';
+import './create.html';
 import './task.js'
 import { HTTP } from 'meteor/http';
 
@@ -24,6 +25,11 @@ Router.route('/data/:_id', function () {
   this.render('data', {data: {_id: name}});
 });
 
+Router.route('/create/:_id', function () {
+	const name = this.params._id;
+	console.log(name);
+  this.render('create', {data: {_id: name}});
+});
 
 
 Template.body.helpers({

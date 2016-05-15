@@ -71,6 +71,11 @@ body
 	color: #555;
 }
 
+.category-header a
+{
+	font-size: 28px;
+}
+
 .examples img
 {
 	padding: 15px;
@@ -81,6 +86,12 @@ body
 	margin: 5px;
 }
 
+.graph img
+{
+	width: 100%;
+	height: auto;
+}
 
 .color1{	background-color: #3d566e;}
 .color2{	background-color: #3B725F;}
+.color3{	background-color: #ecf0f1;}
