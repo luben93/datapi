@@ -31,7 +31,7 @@ Template.body.events({
         //     const url = target.url.value;
         const url =text;
 
-       
+
 
         target.text.value = '';
         //       target.url.value = '';
