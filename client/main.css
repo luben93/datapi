@@ -4,6 +4,11 @@ body
 	font-family: "Dosis";
 }
 
+p
+{
+	font-size: 22px;
+}
+
 .title h1
 {
 	font-size: 128px;
