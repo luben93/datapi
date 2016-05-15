@@ -1,17 +1,18 @@
 import { Template } from 'meteor/templating';
 import { Tasks } from '../api/tasks.js';
-import './body.html';
+import './home.html';
+import './category.html';
 import './task.js'
 import { HTTP } from 'meteor/http';
 
 
 Router.route('/', function () {
 	const text = console.log(this.params.query.text);
-  this.render('content');
+  this.render('home');
 });
 
-Router.route('/page2', function () {
-  this.render('page2');
+Router.route('/category', function () {
+  this.render('category');
 });
 
 Template.body.helpers({
