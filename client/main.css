@@ -71,5 +71,16 @@ body
 	color: #555;
 }
 
+.examples img
+{
+	padding: 15px;
+}
+
+.examples
+{
+	margin: 5px;
+}
+
+
 .color1{	background-color: #3d566e;}
 .color2{	background-color: #3B725F;}
