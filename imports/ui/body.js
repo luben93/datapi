@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Tasks } from '../api/tasks.js';
 import './body.html';
+import './page2.html';
 import './task.js'
 import { HTTP } from 'meteor/http';
 
@@ -30,7 +31,7 @@ Template.body.events({
         //     const url = target.url.value;
         const url =text;
 
-       
+
 
         target.text.value = '';
         //       target.url.value = '';
