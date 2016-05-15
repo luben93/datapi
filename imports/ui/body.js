@@ -1,8 +1,30 @@
 import { Template } from 'meteor/templating';
 import { Tasks } from '../api/tasks.js';
-import './body.html';
+import './home.html';
+import './category.html';
+import './data.html';
 import './task.js'
 import { HTTP } from 'meteor/http';
+
+
+Router.route('/', function () {
+	const text = console.log(this.params.query.text);
+  this.render('home');
+});
+
+Router.route('/category/:name', function () {
+	const name = this.params.name;
+	console.log(name);
+  this.render('category', {data: {name: name}});
+});
+
+Router.route('/data/:_id', function () {
+	const name = this.params._id;
+	console.log(name);
+  this.render('data', {data: {_id: name}});
+});
+
+
 
 Template.body.helpers({
     tasks(){
@@ -16,18 +38,11 @@ Template.body.events({
 
         const target = event.target;
         const text = target.text.value;
+        console.log(text);
         //     const url = target.url.value;
         const url =text;
 
-       Meteor.http.call("GET", url, { params: { }},function(err,result){
-           if(err){
-               console.log("error")
-           }else{
-           console.log(result);
-           Tasks.insert({
-                text,createdAt: new Date(),url,data: result.content,
-            });
-        }});
+
 
         target.text.value = '';
         //       target.url.value = '';
